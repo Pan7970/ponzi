@@ -1,73 +1,99 @@
-# Welcome to your Lovable project
+# Scam Spotter Guide - React Native
 
-## Project info
+An educational React Native app that simulates Ponzi schemes to help users understand how they work and why they inevitably collapse.
 
-**URL**: https://lovable.dev/projects/7765783a-a05c-4933-bd31-808dbf33d794
+## Features
 
-## How can I edit this code?
+- **Interactive Ponzi Scheme Simulator**: Watch how schemes grow and collapse
+- **Educational Content**: Learn about warning signs and safe alternatives
+- **Real-time Metrics**: Track investments, payouts, and losses
+- **Mobile-First Design**: Optimized for iOS and Android devices
 
-There are several ways of editing your application.
+## Getting Started
 
-**Use Lovable**
+### Prerequisites
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7765783a-a05c-4933-bd31-808dbf33d794) and start prompting.
+- Node.js (>= 18)
+- React Native development environment
+- Android Studio (for Android development)
+- Xcode (for iOS development, macOS only)
 
-Changes made via Lovable will be committed automatically to this repo.
+### Installation
 
-**Use your preferred IDE**
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+3. For iOS (macOS only):
+   ```bash
+   cd ios && pod install && cd ..
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Running the App
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+#### Android
+```bash
+npm run android
 ```
 
-**Edit a file directly in GitHub**
+#### iOS (macOS only)
+```bash
+npm run ios
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+#### Development Server
+```bash
+npm start
+```
 
-**Use GitHub Codespaces**
+## Project Structure
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```
+src/
+├── screens/
+│   ├── PonziSimulation.tsx    # Main simulator screen
+│   └── PonziEducation.tsx     # Educational content screen
+└── App.tsx                    # Main app component with navigation
+```
 
-## What technologies are used for this project?
+## Key Components
 
-This project is built with:
+### PonziSimulation
+- Interactive simulation of Ponzi scheme mechanics
+- Real-time financial metrics tracking
+- Auto-run functionality to demonstrate inevitable collapse
+- Educational insights about scheme dynamics
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### PonziEducation
+- Warning signs and red flags
+- Consequences of participation
+- Safe investment alternatives
+- Links to regulatory resources
 
-## How can I deploy this project?
+## Educational Goals
 
-Simply open [Lovable](https://lovable.dev/projects/7765783a-a05c-4933-bd31-808dbf33d794) and click on Share -> Publish.
+This app aims to:
+- Demonstrate how Ponzi schemes operate
+- Show why they inevitably collapse
+- Educate users about warning signs
+- Promote financial literacy and safe investing
 
-## Can I connect a custom domain to my Lovable project?
+## Building for Production
 
-Yes, you can!
+### Android
+```bash
+npm run build
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### iOS
+Use Xcode to build and archive the project for App Store submission.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Contributing
+
+This is an educational project. Contributions that improve the educational value or user experience are welcome.
+
+## Disclaimer
+
+This app is for educational purposes only. It simulates financial schemes to demonstrate their harmful nature and should not be used for any actual investment decisions.

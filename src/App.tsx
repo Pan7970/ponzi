@@ -1,27 +1,41 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import PonziSimulation from './screens/PonziSimulation';
+import PonziEducation from './screens/PonziEducation';
 
-const queryClient = new QueryClient();
+const Stack = createStackNavigator();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  return (
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Stack.Navigator
+          initialRouteName="PonziSimulation"
+          screenOptions={{
+            headerStyle: {
+              backgroundColor: '#2563eb',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}>
+          <Stack.Screen
+            name="PonziSimulation"
+            component={PonziSimulation}
+            options={{title: 'Ponzi Scheme Simulator'}}
+          />
+          <Stack.Screen
+            name="PonziEducation"
+            component={PonziEducation}
+            options={{title: 'What is a Ponzi Scheme?'}}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
+  );
+};
 
 export default App;
